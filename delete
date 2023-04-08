@@ -1,0 +1,22 @@
+<?php
+include_once('dbconnection.php');
+$delete_id=str_replace("'","",$_GET['deletes']);
+
+
+ if (isset($_POST['delete'])) {
+    // echo "<pre>";
+    // print_r($_POST);
+    // echo "</pre>";
+   $id = $_POST['id'];
+   
+    $sql = mysqli_query($conn, "DELETE FROM WHERE `id`='$delete_id'") or die(mysqli_error($conn));
+
+    // echo $sql;
+    // exit;
+
+    echo "<script>window.location.href='update.php?deletes=$delete_id'</script>";
+}
+
+
+
+?>
